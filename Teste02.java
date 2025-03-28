@@ -7,6 +7,6 @@ public class Teste02 {
     System.out.print("Qual o seu segundo numero?");
     int Y = new Scanner(System.in).nextInt();
     int Soma = (X + Y);
-    System.out.print("A soma dos seus dois numeros sao: " + Soma);8
+    System.out.print("A soma dos seus dois numeros sao: " + Soma);
 }
 }
