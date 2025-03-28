@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <label>Informe seu nome</label>
+    <input type="text" placeholder="Ex: Maria" id="nome" />
+    <button onclick="greeting()">Cumprimentar</button>
+    <p></p>
+    <hr />
+    <button onclick="ola()">Clique aqui</button>
+
+    <script>
+        function greeting(){
+            var nomeDigitado = document.getElementById("nome")
+            if(nomeDigitado.value === ""){
+                alert("o nome precisa ser informado")
+                nomeDigitado.focus()
+                return
+            }
+            var paragrafo = document.getElementsByTagName("p");
+            paragrafo[0].innerHTML = "Olá " + nomeDigitado.value;
+            nomeDigitado.value = "";
+        }
+
+        function ola() {
+            var nome = 'maria'
+            alert(nome)
+        }
+    </script>
+</body>
+</html>
