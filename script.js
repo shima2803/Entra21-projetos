@@ -1,34 +1,13 @@
-//console.log(localStorage.getItem('teste'))
-//let cesta = localStorage.getItem('cesta')
-//console.log(cesta)
-
-/* console.log(localStorage.getItem('teste'))
-let cesta = JSON.parse(localStorage.getItem('cesta'))|| []
-    cesta.map(f => console.log(f))*/
-
-/*function gravar() {
-    let nome = document.getElementById('nome').value.trim();
-    if (nome === "") return;
-
-    let contatos = localStorage.getItem('contatos');
-
-    try {
-        contatos = JSON.parse(contatos);
-        if (!Array.isArray(contatos)) {
-            contatos = [];
-        }
-    } catch (e) {
-        contatos = [];
-    }
-
-    contatos.push(nome);
-    localStorage.setItem('contatos', JSON.stringify(contatos));
-    document.getElementById('nome').value = "";
-
-    console.log("Nomes salvos:", contatos);*/
-    function gravar() {
-        //contatos
-        let contatos = JSON.parse(localStorage.getItem('contatos')) || []
-        contatos.push(document.getElementById('nome').value)
-        localStorage.setItem('contatos', JSON.stringify(contatos))
-    }
+document.getElementById("clienteForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    
+    let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+    clientes.push({ nome, email });
+    localStorage.setItem("clientes", JSON.stringify(clientes));
+    
+    alert("Cliente cadastrado com sucesso!");
+    document.getElementById("clienteForm").reset();
+});
